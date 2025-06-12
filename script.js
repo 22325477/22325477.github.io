@@ -1,21 +1,24 @@
 function toggleTheme() {
-  document.body.classList.toggle('dark-mode');
+    document.body.classList.toggle("dark-mode");
 }
-function closePopup() {
-  document.getElementById('announcement-popup').style.display = 'none';
-  sessionStorage.setItem('seenPopup', 'true');
+
+function login() {
+    const user = document.getElementById("username").value;
+    const pass = document.getElementById("password").value;
+    if (user === "admin" && pass === "admin123") {
+        document.getElementById("journal-section").classList.remove("hidden");
+        document.getElementById("login-section").classList.add("hidden");
+    } else {
+        alert("Invalid credentials.");
+    }
 }
-function toggleLogin() {
-  const username = prompt('Username:');
-  const password = prompt('Password:');
-  if (username === 'admin' && password === 'password') {
-    document.getElementById('privateContent').style.display = 'block';
-  } else {
-    alert('Access denied!');
-  }
-}
-window.onload = function() {
-  if (!sessionStorage.getItem('seenPopup')) {
-    document.getElementById('announcement-popup').style.display = 'block';
-  }
+
+window.onload = function () {
+    setTimeout(() => {
+        document.getElementById("popup").style.display = "block";
+    }, 1500);
 };
+
+function closePopup() {
+    document.getElementById("popup").style.display = "none";
+}
