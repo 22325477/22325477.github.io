@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Eric Omari | Home</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="announcement-banner">📢 Welcome to Omari.com!</div>
+  <div class="popup" id="announcement-popup">
+    <p>🚨 Important: Don't miss our latest updates!</p>
+    <button onclick="closePopup()">Close</button>
+  </div>
+  <header>
+    <img src="logo.png" alt="Eric Omari Logo" id="logo"/>
+    <h1>Welcome to Eric Omari's Website</h1>
+    <button onclick="toggleTheme()">Toggle Theme</button>
+  </header>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Gallery</a>
+    <a href="#">Location</a>
+    <a href="#" onclick="toggleLogin()">Login</a>
+  </nav>
+  <main id="privateContent" style="display:none;">
+    <h2>Journal Records</h2>
+    <section>
+      <h3>Sales Journal</h3>
+      <ul><li>GHS 500 - 10/06/2025</li></ul>
+    </section>
+    <section>
+      <h3>Purchase Journal</h3>
+      <ul><li>GHS 300 - 09/06/2025</li></ul>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Eric Omari</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
