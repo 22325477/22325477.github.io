@@ -70,3 +70,13 @@ header, footer {
 .search-engine button {
     padding: 10px;
 }
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.site-logo {
+  height: 50px;
+  border-radius: 50%;
+}
