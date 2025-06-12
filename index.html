@@ -1,42 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Eric Omari | Home</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <title>Eric Omari Website</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-  <div id="announcement-banner">📢 Welcome to Omari.com!</div>
-  <div class="popup" id="announcement-popup">
-    <p>🚨 Important: Don't miss our latest updates!</p>
-    <button onclick="closePopup()">Close</button>
-  </div>
-  <header>
-    <img src="logo.png" alt="Eric Omari Logo" id="logo"/>
-    <h1>Welcome to Eric Omari's Website</h1>
-    <button onclick="toggleTheme()">Toggle Theme</button>
-  </header>
-  <nav>
-    <a href="#">Home</a>
-    <a href="#">Gallery</a>
-    <a href="#">Location</a>
-    <a href="#" onclick="toggleLogin()">Login</a>
-  </nav>
-  <main id="privateContent" style="display:none;">
-    <h2>Journal Records</h2>
-    <section>
-      <h3>Sales Journal</h3>
-      <ul><li>GHS 500 - 10/06/2025</li></ul>
+    <header>
+        <img src="logo.png" alt="Omari Logo" class="logo">
+        <h1>Welcome to Eric Omari's Website</h1>
+    </header>
+
+    <div class="announcement-banner">
+        📢 Latest Announcement: Welcome to the official Omari website!
+    </div>
+
+    <div id="popup" class="popup">
+        <p>📢 Important Announcement: Site is under development!</p>
+        <button onclick="closePopup()">Close</button>
+    </div>
+
+    <button onclick="toggleTheme()" class="theme-toggle">Toggle Theme</button>
+
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Image Gallery</a></li>
+            <li><a href="#">Social Media</a></li>
+            <li><a href="#">Location</a></li>
+        </ul>
+    </nav>
+
+    <section id="login-section">
+        <h2>Login to View Journals</h2>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="login()">Login</button>
     </section>
-    <section>
-      <h3>Purchase Journal</h3>
-      <ul><li>GHS 300 - 09/06/2025</li></ul>
+
+    <section id="journal-section" class="hidden">
+        <h2>Journal Records</h2>
+        <div class="journal">
+            <h3>Sales Journal</h3>
+            <ul>
+                <li>10/06 - Sold product A - $200</li>
+                <li>11/06 - Sold product B - $450</li>
+            </ul>
+        </div>
+        <div class="journal">
+            <h3>Purchase Journal</h3>
+            <ul>
+                <li>09/06 - Bought supplies - $120</li>
+                <li>10/06 - Equipment purchase - $300</li>
+            </ul>
+        </div>
     </section>
-  </main>
-  <footer>
-    <p>&copy; 2025 Eric Omari</p>
-  </footer>
-  <script src="script.js"></script>
+
+    <footer>
+        <p>&copy; 2025 Eric Omari. All rights reserved.</p>
+    </footer>
 </body>
 </html>
