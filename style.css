@@ -1,42 +1,64 @@
 
 body {
-  font-family: sans-serif;
-  background: #fff;
-  color: #000;
-  transition: background 0.3s, color 0.3s;
-}
-body.dark {
-  background: #111;
-  color: #eee;
+  font-family: Arial, sans-serif;
+  padding: 10px;
+  margin: 0;
 }
 .header {
+  background: yellow;
+  padding: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
-  background-color: yellow;
-  color: black;
 }
 .logo-container {
   display: flex;
   align-items: center;
-  gap: 10px;
 }
 .site-logo {
+  width: 50px;
   height: 50px;
   border-radius: 50%;
+  margin-right: 10px;
 }
-.search-section input {
+button {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+input {
+  padding: 5px;
+  margin: 5px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+th, td {
+  border: 1px solid #ccc;
+  padding: 8px;
+}
+.dark {
+  background: #111;
+  color: white;
+}
+.popup {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fefefe;
+  border: 1px solid #888;
+  padding: 20px;
+  display: none;
+  z-index: 1000;
+}
+#announcement-banner {
+  background: black;
+  color: yellow;
   padding: 10px;
-  width: 300px;
-  font-size: 1rem;
-  margin-top: 20px;
+  text-align: center;
 }
-.upload-section {
-  margin-top: 30px;
-}
-.preview-img {
-  max-height: 100px;
-  margin: 10px;
-  border-radius: 10px;
+.error {
+  color: red;
 }
