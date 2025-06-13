@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OMARI Site</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Welcome to OMARI site</h1>
+        <input type="text" id="search" placeholder="Search..." />
+        <button onclick="window.print()">Print Page</button>
+    </header>
+    <main>
+        <section id="profile">
+            <h2>User Profile</h2>
+            <input type="file" id="profilePhoto" accept="image/*" />
+            <input type="text" id="username" placeholder="Enter your name" />
+        </section>
+        <section id="journal">
+            <h2>Journal Entries</h2>
+            <textarea placeholder="Write your journal entry here..."></textarea>
+        </section>
+        <section id="sales">
+            <h2>Sales Journal</h2>
+            <table>
+                <tr><th>Date</th><th>Item</th><th>Amount</th></tr>
+                <tr><td><input type="date"></td><td><input type="text"></td><td><input type="number"></td></tr>
+            </table>
+        </section>
+        <section id="purchase">
+            <h2>Purchase Journal</h2>
+            <table>
+                <tr><th>Date</th><th>Item</th><th>Amount</th></tr>
+                <tr><td><input type="date"></td><td><input type="text"></td><td><input type="number"></td></tr>
+            </table>
+        </section>
+    </main>
+    <footer>
+        <p>Advertisement: Your ad could be here!</p>
+    </footer>
+</body>
+</html>
