@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NANERENE ENT. ENTRIES</title>
+  <link rel="stylesheet" href="https://jspreadsheet.com/v10/jspreadsheet.css" />
+  <script src="https://jspreadsheet.com/v10/jspreadsheet.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      padding: 20px;
+    }
+    h1, h2 {
+      text-align: center;
+    }
+    .spreadsheet {
+      margin: 30px auto;
+      max-width: 1000px;
+    }
+  </style>
+</head>
+<body>
+  <h1>NANERENE ENT. ENTRIES</h1>
+
+  <h2>Sales Journal</h2>
+  <div id="sales" class="spreadsheet"></div>
+
+  <h2>Purchases Journal</h2>
+  <div id="purchases" class="spreadsheet"></div>
+
+  <h2>Expenses</h2>
+  <div id="expenses" class="spreadsheet"></div>
+
+  <script>
+    function setupTable(containerId, data, columns) {
+      jspreadsheet(document.getElementById(containerId), {
+        data: data,
+        columns: columns,
+        minDimensions: [columns.length, 5],
+        allowInsertColumn: true,
+        allowManualInsertColumn: true,
+        allowDeleteRow: true,
+        allowInsertRow: true,
+        license: 'non-commercial',
+        onchange: function(instance, cell, x, y, value) {
+          saveTable(containerId, instance.getData());
+        }
+      });
+    }
+
+    function saveTable(name, data) {
+      localStorage.setItem(name, JSON.stringify(data));
+    }
+
+    function loadTable(name) {
+      return JSON.parse(localStorage.getItem(name)) || [];
+    }
+
+    setupTable("sales", loadTable("sales"), [
+      { type: 'calendar', title: 'Date', width: 120 },
+      { type: 'text', title: 'Item', width: 150 },
+      { type: 'numeric', title: 'Quantity', width: 80 },
+      { type: 'numeric', title: 'Unit Price (₵)', width: 100 },
+      { type: 'numeric', title: 'Total (₵)', width: 100, readOnly: true }
+    ]);
+
+    setupTable("purchases", loadTable("purchases"), [
+      { type: 'calendar', title: 'Date', width: 120 },
+      { type: 'text', title: 'Supplier', width: 150 },
+      { type: 'text', title: 'Item', width: 150 },
+      { type: 'numeric', title: 'Quantity', width: 80 },
+      { type: 'numeric', title: 'Unit Price (₵)', width: 100 },
+      { type: 'numeric', title: 'Total (₵)', width: 100, readOnly: true }
+    ]);
+
+    setupTable("expenses", loadTable("expenses"), [
+      { type: 'calendar', title: 'Date', width: 120 },
+      { type: 'text', title: 'Expense Type', width: 150 },
+      { type: 'numeric', title: 'Amount (₵)', width: 100 },
+      { type: 'text', title: 'Description', width: 200 }
+    ]);
+  </script>
+</body>
+</html>
