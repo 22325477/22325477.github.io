@@ -1,0 +1,1 @@
+<?php echo 'Welcome to Omari Motivata, Be inspired'; ?>
